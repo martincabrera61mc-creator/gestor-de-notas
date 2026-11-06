@@ -1,1 +1,55 @@
+:root{
+  --bg:#eef1f5;--card:#fff;--ink:#1b2438;--mut:#5d6881;--line:#d9dfe9;--acc:#2f4bd6;
+  --c1:#c4372f;--c1b:#fbe4e2;--c2:#a86a00;--c2b:#fdf0d6;
+  --c3:#1d6fa5;--c3b:#dcedf8;--c4:#1c7a4a;--c4b:#d9f1e3;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#10141f;--card:#1a2133;--ink:#e8ecf5;--mut:#9aa6c0;--line:#2c364e;--acc:#8ea2ff;
+    --c1:#ff8a82;--c1b:#3d1f1e;--c2:#f0b955;--c2b:#3a2e14;
+    --c3:#7cc2f0;--c3b:#16303f;--c4:#6fd5a1;--c4b:#173326;
+  }
+  button:not(.ghost){color:#10141f}
+}
 
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 Figtree,system-ui,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 56px}
+h1,h2{font-family:"Bricolage Grotesque",Figtree,sans-serif;margin:0}
+h1{font-size:clamp(28px,5vw,40px);font-weight:700;letter-spacing:-.02em}
+h2{font-size:20px;font-weight:700;margin-bottom:12px}
+.sub{color:var(--mut);margin:4px 0 20px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:end}
+label{display:flex;flex-direction:column;font-size:14px;color:var(--mut);gap:4px}
+input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-width:0}
+input:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+button{font:600 15px Figtree,sans-serif;border:0;border-radius:6px;padding:9px 14px;background:var(--acc);color:#fff;cursor:pointer}
+button.ghost{background:transparent;color:var(--mut);padding:4px 8px;border:1px solid var(--line)}
+
+/* Resumen */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{border-radius:8px;padding:12px;border-left:6px solid}
+.stat b{display:block;font:700 28px "Bricolage Grotesque",sans-serif}
+.stat small{color:var(--mut)}
+.s0{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--acc)}
+
+/* Categorías de desempeño */
+.cat1{background:var(--c1b);border-color:var(--c1);color:var(--c1)}
+.cat2{background:var(--c2b);border-color:var(--c2);color:var(--c2)}
+.cat3{background:var(--c3b);border-color:var(--c3);color:var(--c3)}
+.cat4{background:var(--c4b);border-color:var(--c4);color:var(--c4)}
+.stat.cat1,.stat.cat2,.stat.cat3,.stat.cat4{color:var(--ink)}
+
+/* Tabla */
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{padding:8px 6px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:600;color:var(--mut);font-size:14px;vertical-align:bottom}
+td input.n{width:68px;text-align:center}
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-weight:600;font-size:14px;border:1px solid}
+.avg{font:700 18px "Bricolage Grotesque",sans-serif}
+.empty{color:var(--mut);padding:18px 4px}
+.err{color:var(--c1);font-size:14px;min-height:20px;margin-top:6px}
+.legend{color:var(--mut);font-size:14px;margin-top:10px}
