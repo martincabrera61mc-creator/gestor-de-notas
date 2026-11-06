@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestor de notas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+  <h1>Gestor de notas</h1>
+  <p class="sub">Registra estudiantes, ingresa sus notas y mira su promedio y desempeño al instante.</p>
+
+  <section class="card">
+    <h2>Curso</h2>
+    <div class="row">
+      <label>Nombre del curso<input id="curso" placeholder="Ej. Matemáticas 8°A" style="width:240px"></label>
+      <label>Nombre del estudiante<input id="nom" placeholder="Nombre completo" style="width:240px"></label>
+      <button id="addE">Agregar estudiante</button>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <label>Nueva actividad<input id="act" placeholder="Ej. Quiz 1" style="width:200px"></label>
+      <label>Peso (%)<input id="peso" type="number" min="1" max="100" value="20" style="width:90px"></label>
+      <button id="addA">Agregar actividad</button>
+    </div>
+    <div class="err" id="err" role="alert"></div>
+  </section>
+
+  <section class="card">
+    <h2>Resumen del curso</h2>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="card">
+    <h2>Registro de notas</h2>
+    <div class="wrap"><table id="tabla"></table></div>
+    <p class="legend">Escala de 0,0 a 5,0. Bajo: menos de 3,0 · Básico: 3,0 a 3,9 · Alto: 4,0 a 4,5 · Superior: 4,6 a 5,0. El promedio usa el peso de cada actividad con nota registrada.</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
